@@ -4,8 +4,8 @@ module.exports = {
 
   daisyui: {
     themes: [
-      "wireframe",
       "black",
+      "wireframe",
     ],
   },
 

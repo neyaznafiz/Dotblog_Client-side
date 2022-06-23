@@ -53,7 +53,6 @@ const Navbar = ({ children }) => {
 
                             </label>
 
-
                             <Link to='/'>Home</Link>
                             <Link to='/allblog'>All Blogs</Link>
                             <Link to='/addblog'>Add Blogs</Link>
@@ -72,38 +71,15 @@ const Navbar = ({ children }) => {
             </div>
             <div className="drawer-side">
                 <label for="my-drawer-3" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 montserrat-alternates font-semibold tracking-wide">
 
+                <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 bg-opacity-80 montserrat-alternates font-semibold tracking-wide">
                     {/* <!-- Sidebar content here --> */}
-                    <li>
-                        <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">Theam</button>
-                    </li>
-
-                    <li>
-                        <Link to='/'>Home</Link>
-                    </li>
-
-                    <li>
-                        <Link to='/allblog'>All Blogs</Link>
-                    </li>
-
-                    <li>
-                        <Link to='/addblog'>Add Blogs</Link>
-                    </li>
-
-                    <li>
-                        {/* <Link to='/about'>About</Link> */}
-                    </li>
-
-                    <li>
-                        <Link to='/signin'>Sign In</Link>
-                    </li>
-
-                    <li>
-                        <Link to='/signout'>Sign Out</Link>
-                    </li>
-
-
+                    <Link to='/'>Home</Link>
+                    <Link to='/allblog'>All Blogs</Link>
+                    <Link to='/addblog'>Add Blogs</Link>
+                    {/* <Link to='/about'>About</Link> */}
+                    <Link to='/signin'>Sign In</Link>
+                    <Link to='/signout'>Sign Out</Link>
                 </ul>
 
             </div>
