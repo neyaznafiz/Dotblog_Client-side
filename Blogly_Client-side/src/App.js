@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 import About from './pages/About'
 import SignIn from './pages/UserAuthentication/SignIn'
 import AddBlog from "./pages/Blog/AddBlog";
+import SignUp from "./pages/UserAuthentication/SignUp";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/addblog" element={<AddBlog/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/signin" element={<SignIn/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
         </Routes>
 
       </Navbar>
