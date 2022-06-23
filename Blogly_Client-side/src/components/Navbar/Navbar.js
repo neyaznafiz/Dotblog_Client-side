@@ -4,7 +4,7 @@ import '../../style/style.css'
 
 const Navbar = ({ children }) => {
 
-    const [dark, setDark] = useState(false)
+    const [dark, setDark] = useState(true)
 
     return (
         <div className="drawer drawer-end" data-theme={dark ? "black" : "wireframe"}>
@@ -13,9 +13,9 @@ const Navbar = ({ children }) => {
                 {/* <!-- Navbar --> */}
                 <div className="w-full navbar bg-transparent md:px-20 ">
                     <div>
-                        <img src="https://i.ibb.co/RNGY4SB/logo-nav.png" alt="" className='w-[37px]' />
+                        <img src="https://i.ibb.co/ZB7bvJ9/nav-logo.png" alt="" className='w-[37px]' />
                     </div>
-                    <div className="flex-1 px-2 mx-2 text-2xl tracking-widest font-semibold montserrat-alternates">blogly</div>
+                    <div className="flex-1 px-2 mx-2 text-2xl tracking-widest font-semibold montserrat-alternates">dotblog</div>
                     <div className="flex-none lg:hidden">
 
                         <label class="swap swap-rotate ">

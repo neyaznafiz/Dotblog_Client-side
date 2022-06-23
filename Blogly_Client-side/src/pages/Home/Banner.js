@@ -14,7 +14,7 @@ function Banner() {
                             {/* <h1 className="mb-3">Heading</h1> */}
                             <h4 className="mb-3 raleway text-2xl md:text-5xl font ">“Two things are infinity: the universe and the human stupidity. <br /> And I'm not sure about the universe.”</h4>
                             <div className='flex justify-between md:justify-around '>
-                               <span></span> <span className='text-md md:text-xl'>~ Elbert Hubbard ~</span>
+                                <span></span> <span className='text-md md:text-xl'>~ Elbert Hubbard ~</span>
                             </div>
                         </div>
                     </div>
