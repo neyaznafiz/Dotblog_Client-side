@@ -1,10 +1,9 @@
 import React from 'react'
+import { HashLoader } from 'react-spinners'
 
 function Loading() {
     return (
-        <div>
-            
-        </div>
+        <HashLoader color='#05a962' size={250} />
     )
 }
 

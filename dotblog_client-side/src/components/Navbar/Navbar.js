@@ -66,15 +66,15 @@ const Navbar = ({ children }) => {
 
                             </label>
 
-                            <Link to='/'>Home</Link>
-                            <Link to='/allblog'>All Blogs</Link>
-                            <Link to='/addblog'>Add Blogs</Link>
+                            <Link to='/' className='type-1 menu-selection'>Home</Link>
+                            <Link to='/allblog' className='type-1 menu-selection'>All Blogs</Link>
+                            <Link to='/addblog' className='type-1 menu-selection'>Add Blogs</Link>
                             {/* <Link to='/about'>About</Link> */}
 
                             {!user ?
-                                <Link to='/signin'>Sign In</Link>
+                                <Link to='/signin' className='type-1 menu-selection'>Sign In</Link>
                                 :
-                                <button onClick={handleSignOut}>Sign Out</button>
+                                <button onClick={handleSignOut} className='type-1 menu-selection'>Sign Out</button>
                             }
 
                         </ul>
@@ -89,14 +89,17 @@ const Navbar = ({ children }) => {
             <div className="drawer-side">
                 <label for="my-drawer-3" className="drawer-overlay"></label>
 
-                <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 bg-opacity-80 montserrat-alternates font-semibold tracking-wide">
+                <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 bg-opacity-80 montserrat-alternates font-semibold tracking-wide">
                     {/* <!-- Sidebar content here --> */}
-                    <Link to='/'>Home</Link>
-                    <Link to='/allblog'>All Blogs</Link>
-                    <Link to='/addblog'>Add Blogs</Link>
+                    <Link to='/' className='type-2 btn-selection'>Home</Link>
+                    <Link to='/allblog' className='type-2 btn-selection'>All Blogs</Link>
+                    <Link to='/addblog' className='type-2 btn-selection'>Add Blogs</Link>
                     {/* <Link to='/about'>About</Link> */}
-                    <Link to='/signin'>Sign In</Link>
-                    <Link to='/signout'>Sign Out</Link>
+                    {!user ?
+                                <Link to='/signin' className='type-2 btn-selection'>Sign In</Link>
+                                :
+                                <button onClick={handleSignOut} className='type-2 btn-selection'>Sign Out</button>
+                            }
                 </ul>
 
             </div>

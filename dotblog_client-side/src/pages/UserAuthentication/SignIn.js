@@ -27,7 +27,7 @@ function SignUp() {
     }
 
     if (loading) {
-        <HashLoader color='#ffffff' loading={loading} size={250} />
+        <HashLoader color='#05a962' loading={loading} size={250} />
     }
 
     const handleSignIn = data => {
@@ -107,12 +107,12 @@ function SignUp() {
 
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
-                        <input type="submit" value='Sign In' className='border px-6 py-1 hover:bg-black hover:text-white' />
+                        <button className='type-2 btn-selection'> Sign In</button>
                     </div>
                 </form>
 
                 <div className='flex justify-center my-7 md:my-14'>
-                    <p className='lg:pr-3 text-'> New here ? <Link to='/signup'>Register</Link> </p>
+                    <p className='lg:pr-3 text-'> New here ? <Link to='/register' className='link-selection type-3'>Register</Link> </p>
                 </div>
             </div>
 

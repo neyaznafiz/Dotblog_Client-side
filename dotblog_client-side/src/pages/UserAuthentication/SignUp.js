@@ -123,12 +123,12 @@ function SignUp() {
                     </div>
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
-                        <input type="submit" value='Sign Up' className='border px-6 py-1 hover:bg-black hover:text-white' />
+                    <button className='type-2 btn-selection'> Register </button>
                     </div>
                 </form>
 
                 <div className='flex justify-center my-7 md:my-14'>
-                    <p className='lg:pr-3'>Have an account ? <Link to='/signin'>Sign In</Link> </p>
+                    <p className='lg:pr-3'>Have an account ? <Link to='/signin' className='type-3 link-selection'>Sign In</Link> </p>
                 </div>
             </div>
 

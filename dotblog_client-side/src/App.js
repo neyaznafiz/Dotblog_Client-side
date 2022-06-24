@@ -10,6 +10,7 @@ import AddBlog from "./pages/Blog/AddBlog";
 import SignUp from "./pages/UserAuthentication/SignUp";
 import useLoading from "./Hooks/useLoading";
 import { HashLoader } from "react-spinners";
+import Loading from "./components/Shared/Loading";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
 
       {loading ?
         <div className="w-screen h-screen grid justify-center items-center">
-          <HashLoader color='#05a962' loading={loading} size={250} />
+          <Loading ></Loading>
         </div>
         :
         <>
@@ -33,7 +34,7 @@ function App() {
               <Route path="/addblog" element={<AddBlog />} />
               <Route path="/about" element={<About />} />
               <Route path="/signin" element={<SignIn />} />
-              <Route path="/signup" element={<SignUp />} />
+              <Route path="/register" element={<SignUp />} />
             </Routes>
 
           </Navbar>
