@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
+import useLoading from '../../Hooks/useLoading';
+import { HashLoader } from "react-spinners";
 
 function SignUp() {
 
@@ -14,14 +16,18 @@ function SignUp() {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
-      const navigate = useNavigate()
+    const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
     if (error) {
         toast.error(<p>Error: {error.message}</p>)
+    }
+
+    if (loading) {
+        <HashLoader color='#ffffff' loading={loading} size={250} />
     }
 
     const handleSignIn = data => {
@@ -35,7 +41,7 @@ function SignUp() {
 
             <div className='w-[300px] md:w-[700px]'>
 
-            <p className="text-3xl font-bold my-10 md:pl-24">Sign In Here</p>
+                <p className="text-3xl font-bold my-10 md:pl-24">Sign In Here</p>
 
                 <form onSubmit={handleSubmit(handleSignIn)}>
 
@@ -95,9 +101,9 @@ function SignUp() {
                         </label>
                     </div>
 
-                        <div className='flex justify-end w-[300px] md:w-[580px]'>
-                            <p className='lg:pl-4 text-center'>Forget Password</p>
-                        </div>
+                    <div className='flex justify-end w-[300px] md:w-[580px]'>
+                        <p className='lg:pl-4 text-center'>Forget Password</p>
+                    </div>
 
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
