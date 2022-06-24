@@ -14,23 +14,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
   }
   .menu-selection:hover {
     transition: color 0.4s ease;
-    /* color: white; */
     cursor: pointer;
   }
   .type-1:after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    /* background: black; */
     border-bottom: 2px solid white;
-    z-index: -1;
     transform-origin: 100%;
     transform: scaleX(0);
     transition: transform 0.4s ease;
@@ -47,7 +41,6 @@
     width: 110px;
     height: 40px;
     padding-bottom: 10px;
-    z-index: 1;
   }
   .link-selection:hover {
     transition: color 0.4s ease;
@@ -61,7 +54,6 @@
     width: 100%;
     height: 100%;
     border-bottom: 3px solid black;
-    z-index: -1;
     transform-origin: 100%;
     transform: scaleX(0);
     transition: transform 0.4s ease;
@@ -80,15 +72,15 @@
     position: relative;
     width: 190px;
     height: 40px;
-    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 2px;
     z-index: 1;
   }
   .btn-selection:hover {
     transition: color 0.4s ease;
-    color: white;
+    color: black;
     cursor: pointer;
   }
   .type-2:after {
@@ -98,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
+    background: white;
     z-index: -1;
     transform-origin: 100%;
     transform: scaleX(0);

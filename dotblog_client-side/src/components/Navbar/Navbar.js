@@ -89,18 +89,24 @@ const Navbar = ({ children }) => {
             <div className="drawer-side">
                 <label for="my-drawer-3" className="drawer-overlay"></label>
 
-                <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 bg-opacity-80 montserrat-alternates font-semibold tracking-wide">
-                    {/* <!-- Sidebar content here --> */}
-                    <Link to='/' className='type-2 btn-selection'>Home</Link>
-                    <Link to='/allblog' className='type-2 btn-selection'>All Blogs</Link>
-                    <Link to='/addblog' className='type-2 btn-selection'>Add Blogs</Link>
-                    {/* <Link to='/about'>About</Link> */}
-                    {!user ?
-                                <Link to='/signin' className='type-2 btn-selection'>Sign In</Link>
-                                :
-                                <button onClick={handleSignOut} className='type-2 btn-selection'>Sign Out</button>
-                            }
+
+                <ul className="menu p-4 mt-16 overflow-y-auto w-60 bg-black bg-opacity-90 text-white montserrat-alternates font-semibold tracking-wide">
+
+                    {/* <div> */}
+                        {/* <!-- Sidebar content here --> */}
+                        <Link to='/' className='type-2 btn-selection flex justify-center'>Home</Link>
+                        <Link to='/allblog' className='type-2 btn-selection flex justify-center'>All Blogs</Link>
+                        <Link to='/addblog' className='type-2 btn-selection flex justify-center'>Add Blogs</Link>
+                        {/* <Link to='/about'>About</Link> */}
+                        {!user ?
+                            <Link to='/signin' className='type-2 btn-selection flex justify-center'>Sign In</Link>
+                            :
+                            <button onClick={handleSignOut} className='type-2 btn-selection flex justify-center'>Sign Out</button>
+                        }
+                    {/* </div> */}
+
                 </ul>
+
 
             </div>
         </div>
