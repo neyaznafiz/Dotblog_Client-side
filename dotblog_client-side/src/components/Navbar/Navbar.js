@@ -92,18 +92,19 @@ const Navbar = ({ children }) => {
 
                 <ul className="menu p-4 mt-16 overflow-y-auto w-60 bg-black bg-opacity-90 text-white montserrat-alternates font-semibold tracking-wide">
 
-                    {/* <div> */}
-                        {/* <!-- Sidebar content here --> */}
-                        <Link to='/' className='type-2 btn-selection flex justify-center'>Home</Link>
-                        <Link to='/allblog' className='type-2 btn-selection flex justify-center'>All Blogs</Link>
-                        <Link to='/addblog' className='type-2 btn-selection flex justify-center'>Add Blogs</Link>
-                        {/* <Link to='/about'>About</Link> */}
-                        {!user ?
-                            <Link to='/signin' className='type-2 btn-selection flex justify-center'>Sign In</Link>
-                            :
-                            <button onClick={handleSignOut} className='type-2 btn-selection flex justify-center'>Sign Out</button>
-                        }
-                    {/* </div> */}
+                    {/* <!-- Sidebar content here --> */}
+                    <Link to='/' className='type-2 mobile-nav-menu-selection flex justify-center'>Home</Link>
+
+                    <Link to='/allblog' className='type-2 mobile-nav-menu-selection flex justify-center'>All Blogs</Link>
+
+                    <Link to='/addblog' className='type-2 mobile-nav-menu-selection flex justify-center'>Add Blogs</Link>
+
+                    {/* <Link to='/about'>About</Link> */}
+                    {!user ?
+                        <Link to='/signin' className='type-2 mobile-nav-menu-selection flex justify-center'>Sign In</Link>
+                        :
+                        <button onClick={handleSignOut} className='type-2 mobile-nav-menu-selection flex justify-center'>Sign Out</button>
+                    }
 
                 </ul>
 

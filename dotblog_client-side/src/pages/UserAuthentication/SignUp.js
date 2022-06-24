@@ -27,7 +27,7 @@ function SignUp() {
     }
 
     const handleSignUp = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password)
+        await createUserWithEmailAndPassword(data.name, data.email, data.password)
         navigate(from, { replace: true });
         toast.success('Congratulation ! Your registration was successful')
     }
@@ -48,7 +48,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Name</label>
                             <div className='flex justify-center'>
                                 <input type="text"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
                                     {...register("name", {
                                         required: {
                                             value: true,
@@ -73,7 +73,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
                                 <input type="email"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -102,7 +102,7 @@ function SignUp() {
 
                             <div className='flex justify-center'>
                                 <input type="password"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
                                     {...register("password", {
                                         required: {
                                             value: true,
@@ -123,7 +123,7 @@ function SignUp() {
                     </div>
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
-                    <button className='type-2 btn-selection'> Register </button>
+                    <button className='type-4 btn-selection'> Register </button>
                     </div>
                 </form>
 

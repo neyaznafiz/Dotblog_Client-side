@@ -52,7 +52,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
                                 <input type="email"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -81,7 +81,7 @@ function SignUp() {
 
                             <div className='flex justify-center'>
                                 <input type="password"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
                                     {...register("password", {
                                         required: {
                                             value: true,
@@ -107,7 +107,7 @@ function SignUp() {
 
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
-                        <button className='type-2 btn-selection'> Sign In</button>
+                        <button className='type-4 btn-selection'> Sign In</button>
                     </div>
                 </form>
 
