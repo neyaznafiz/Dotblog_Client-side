@@ -31,7 +31,11 @@ async function run() {
             res.send(postBlog)
         })
 
-       
+        //api for get blog by id
+        app.get('/blog/:id', async (req, res) => {
+            const getSingleBlogById = await allBlogsCollection.findOne({_id: ObjectId(req.params.id)})
+            res.send(getSingleBlogById)
+        })
 
 
     }
