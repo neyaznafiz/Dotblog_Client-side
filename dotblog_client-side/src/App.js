@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "./components/Navbar/Navbar";
 import AllBlogs from "./pages/Blog/AllBlogs/AllBlogs";
 import Home from './pages/Home/Home'
@@ -15,16 +17,16 @@ function App() {
       <Navbar>
 
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/allblog" element={<AllBlogs/>}/>
-          <Route path="/addblog" element={<AddBlog/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/signin" element={<SignIn/>}/>
-          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/allblog" element={<AllBlogs />} />
+          <Route path="/addblog" element={<AddBlog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
 
       </Navbar>
-
+      <ToastContainer />
     </div>
   );
 }

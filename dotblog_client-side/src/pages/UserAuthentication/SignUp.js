@@ -1,18 +1,32 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/firebase.init'
+import { async } from '@firebase/util';
+import { toast } from 'react-toastify';
 
 function SignUp() {
 
     const { register, formState: { errors }, handleSubmit } = useForm()
 
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-    const handleSignUp = data => {
-        // signInWithEmailAndPassword(data.email, data.password)
+    if (error) {
+        toast.error(<p>Error: {error.message}</p>)
+    }
+
+    const handleSignUp = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password)
     }
 
     return (
-        <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>
+        <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center md:text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>
 
             <div className='w-[300px] md:w-[700px]'>
 
@@ -26,7 +40,7 @@ function SignUp() {
                         <div className='w-full md:flex justify-center mb-4'>
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Name</label>
                             <div className='flex justify-center'>
-                                <input type="email"
+                                <input type="text"
                                     className="bg-transparent border-b-[2.5px] border-dashed border-black"
                                     {...register("name", {
                                         required: {
@@ -106,7 +120,7 @@ function SignUp() {
                     </div>
                 </form>
 
-                <div className='flex justify-center my-14'>
+                <div className='flex justify-center my-7 md:my-14'>
                     <p className='lg:pr-3'>Have an account ? <Link to='/signin'>Sign In</Link> </p>
                 </div>
             </div>

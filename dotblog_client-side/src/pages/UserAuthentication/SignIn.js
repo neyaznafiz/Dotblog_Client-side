@@ -12,7 +12,7 @@ function SignUp() {
     }
 
     return (
-        <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>
+        <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center md:text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>
 
             <div className='w-[300px] md:w-[700px]'>
 
@@ -86,8 +86,8 @@ function SignUp() {
                     </div>
                 </form>
 
-                <div className='flex justify-center my-14'>
-                    <p className='lg:pr-3'>Are you new here ? <Link to='/signup'>Sign Up</Link> </p>
+                <div className='flex justify-center my-7 md:my-14'>
+                    <p className='lg:pr-3 text-'> New here ? <Link to='/signup'>Register</Link> </p>
                 </div>
             </div>
 
