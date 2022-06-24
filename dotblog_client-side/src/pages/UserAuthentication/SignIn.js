@@ -4,9 +4,8 @@ import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
-import useLoading from '../../Hooks/useLoading';
-import { HashLoader } from "react-spinners";
 import SocialSignUp from './SocialSignUp';
+import Loading from '../../components/Shared/Loading';
 
 function SignUp() {
 
@@ -28,13 +27,13 @@ function SignUp() {
     }
 
     if (loading) {
-        <HashLoader color='#05a962' loading={loading} size={250} />
+       return <div className='flex justify-center items-center h-screen'><Loading/></div>
     }
 
     const handleSignIn = data => {
         signInWithEmailAndPassword(data.email, data.password)
         navigate(from, { replace: true });
-        toast.success('Congratulation ! You are successfuly LogIn')
+        toast.success('Congratulation ! You are successfuly SignIn')
     }
 
     return (

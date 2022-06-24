@@ -1,11 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init'
 import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
 import SocialSignUp from './SocialSignUp';
+import Loading from '../../components/Shared/Loading';
 
 function SignUp() {
 
@@ -18,18 +19,26 @@ function SignUp() {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    
+    const [sendEmailVerification, sending, emailVerificationError] = useSendEmailVerification(auth);
+
+
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
-    if (error) {
-        toast.error(<p>Error: {error.message}</p>)
+    if (error, emailVerificationError) {
+        toast.error(<p>Error: {error.message}, {emailVerificationError.message}</p>)
+    }
+
+    if (loading, sending) {
+         <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const handleSignUp = async data => {
-        await createUserWithEmailAndPassword(data.name, data.email, data.password)
+        await createUserWithEmailAndPassword(data.email, data.password)
         navigate(from, { replace: true });
+        sendEmailVerification()
+        toast.success('Verification email send to {data.email}')
         toast.success('Congratulation ! Your registration was successful')
     }
 
@@ -124,7 +133,7 @@ function SignUp() {
                     </div>
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
-                    <button className='type-4 btn-selection'> Register </button>
+                        <button className='type-4 btn-selection'> Register </button>
                     </div>
                 </form>
 
@@ -132,7 +141,7 @@ function SignUp() {
                     <p className='lg:pr-3'>Have an account ? <Link to='/signin' className='type-3 link-selection'>Sign In</Link> </p>
                 </div>
 
-                <SocialSignUp/>
+                <SocialSignUp />
             </div>
 
         </div>
