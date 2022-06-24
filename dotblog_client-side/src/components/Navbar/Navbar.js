@@ -1,10 +1,19 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
 import '../../style/style.css'
 
 const Navbar = ({ children }) => {
 
     const [dark, setDark] = useState(true)
+    const [user] = useAuthState(auth)
+    console.log(user);
+
+    const handleSignOut = () => {
+        signOut(auth);
+    };
 
     return (
         <div className="drawer drawer-end" data-theme={dark ? "black" : "wireframe"}>
@@ -61,8 +70,12 @@ const Navbar = ({ children }) => {
                             <Link to='/allblog'>All Blogs</Link>
                             <Link to='/addblog'>Add Blogs</Link>
                             {/* <Link to='/about'>About</Link> */}
-                            <Link to='/signin'>Sign In</Link>
-                            <Link to='/signout'>Sign Out</Link>
+
+                            {!user ?
+                                <Link to='/signin'>Sign In</Link>
+                                :
+                                <button onClick={handleSignOut}>Sign Out</button>
+                            }
 
                         </ul>
                     </div>

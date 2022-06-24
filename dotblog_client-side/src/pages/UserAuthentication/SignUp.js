@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init'
 import { async } from '@firebase/util';
@@ -17,12 +17,18 @@ function SignUp() {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/"
+
     if (error) {
         toast.error(<p>Error: {error.message}</p>)
     }
 
     const handleSignUp = async data => {
         await createUserWithEmailAndPassword(data.email, data.password)
+        navigate(from, { replace: true });
     }
 
     return (
