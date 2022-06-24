@@ -25,16 +25,22 @@ async function run() {
             res.send(getAllBlogs)
         })
 
+        //api for get blog by id
+        app.get('/blog/:id', async (req, res) => {
+            const getSingleBlogById = await allBlogsCollection.findOne({ _id: ObjectId(req.params.id) })
+            res.send(getSingleBlogById)
+        })
+
         //api for blog post
         app.post('/post-blog', async (req, res) => {
             const postBlog = await allBlogsCollection.insertOne(req.body)
             res.send(postBlog)
         })
 
-        //api for get blog by id
-        app.get('/blog/:id', async (req, res) => {
-            const getSingleBlogById = await allBlogsCollection.findOne({_id: ObjectId(req.params.id)})
-            res.send(getSingleBlogById)
+        //api for delete specific blog
+        app.delete('/delete-blog/:id', async (req, res) => {
+            const deleteSpecificBlog = await allBlogsCollection.deleteOne({ _id: ObjectId(req.params.id) })
+            res.send(deleteSpecificBlog)
         })
 
 
