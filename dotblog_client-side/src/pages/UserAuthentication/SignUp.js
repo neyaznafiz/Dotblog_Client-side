@@ -29,6 +29,7 @@ function SignUp() {
     const handleSignUp = async data => {
         await createUserWithEmailAndPassword(data.email, data.password)
         navigate(from, { replace: true });
+        toast.success('Congratulation ! Your registration was successful')
     }
 
     return (

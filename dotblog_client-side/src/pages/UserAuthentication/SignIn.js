@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
+import { toast } from 'react-toastify';
 
 function SignUp() {
 
@@ -19,10 +20,14 @@ function SignUp() {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
+    if (error) {
+        toast.error(<p>Error: {error.message}</p>)
+    }
 
     const handleSignIn = data => {
         signInWithEmailAndPassword(data.email, data.password)
         navigate(from, { replace: true });
+        toast.success('Congratulation ! You are successfuly LogIn')
     }
 
     return (
