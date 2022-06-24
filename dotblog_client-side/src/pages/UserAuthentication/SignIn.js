@@ -6,6 +6,7 @@ import auth from '../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 import useLoading from '../../Hooks/useLoading';
 import { HashLoader } from "react-spinners";
+import SocialSignUp from './SocialSignUp';
 
 function SignUp() {
 
@@ -46,13 +47,13 @@ function SignUp() {
                 <form onSubmit={handleSubmit(handleSignIn)}>
 
                     {/* email */}
-                    <div className="form-control w-full bg-transparent border-0 ">
+                    <div className="form-control w-full bg-transparent border-0">
 
                         <div className='w-full md:flex justify-center mb-4'>
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
                                 <input type="email"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -81,7 +82,7 @@ function SignUp() {
 
                             <div className='flex justify-center'>
                                 <input type="password"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none  px-2"
                                     {...register("password", {
                                         required: {
                                             value: true,
@@ -114,7 +115,11 @@ function SignUp() {
                 <div className='flex justify-center my-7 md:my-14'>
                     <p className='lg:pr-3 text-'> New here ? <Link to='/register' className='link-selection type-3'>Register</Link> </p>
                 </div>
+
+                <SocialSignUp />
+
             </div>
+
 
         </div>
     )

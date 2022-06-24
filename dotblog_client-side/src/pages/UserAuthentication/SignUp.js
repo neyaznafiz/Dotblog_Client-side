@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init'
 import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
+import SocialSignUp from './SocialSignUp';
 
 function SignUp() {
 
@@ -48,7 +49,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Name</label>
                             <div className='flex justify-center'>
                                 <input type="text"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("name", {
                                         required: {
                                             value: true,
@@ -73,7 +74,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
                                 <input type="email"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -102,7 +103,7 @@ function SignUp() {
 
                             <div className='flex justify-center'>
                                 <input type="password"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none"
+                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("password", {
                                         required: {
                                             value: true,
@@ -130,6 +131,8 @@ function SignUp() {
                 <div className='flex justify-center my-7 md:my-14'>
                     <p className='lg:pr-3'>Have an account ? <Link to='/signin' className='type-3 link-selection'>Sign In</Link> </p>
                 </div>
+
+                <SocialSignUp/>
             </div>
 
         </div>
