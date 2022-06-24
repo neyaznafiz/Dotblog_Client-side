@@ -19,12 +19,20 @@ async function run() {
         await client.connect()
         const allBlogsCollection = client.db("dotblog-data-collection").collection("all-blogs");
 
-      
-        // blog post api
+        //api for get all blogs
+        app.get('/blogs', async (req, res) => {
+            const getAllBlogs = await allBlogsCollection.find({}).toArray()
+            res.send(getAllBlogs)
+        })
+
+        //api for blog post
         app.post('/post-blog', async (req, res) => {
             const postBlog = await allBlogsCollection.insertOne(req.body)
             res.send(postBlog)
         })
+
+       
+
 
     }
     finally { }
