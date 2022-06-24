@@ -11,7 +11,7 @@ import Loading from '../../components/Shared/Loading';
 function SignUp() {
 
     const { register, formState: { errors }, handleSubmit } = useForm()
-
+    console.log(register);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -27,20 +27,21 @@ function SignUp() {
     let from = location.state?.from?.pathname || "/"
 
     if (error, emailVerificationError) {
-        toast.error(<p>Error: {error.message}, {emailVerificationError.message}</p>)
+        return toast.error(<p>Error: {error?.message}, {emailVerificationError?.message}</p>)
     }
 
     if (loading, sending) {
-         <div className='flex justify-center items-center h-screen'><Loading /></div>
+        <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const handleSignUp = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password)
+        await createUserWithEmailAndPassword( data.email, data.password)
         navigate(from, { replace: true });
-        sendEmailVerification()
+        await sendEmailVerification()
         toast.success('Verification email send to {data.email}')
         toast.success('Congratulation ! Your registration was successful')
     }
+
 
     return (
         <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center md:text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>

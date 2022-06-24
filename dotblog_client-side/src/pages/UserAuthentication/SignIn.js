@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 import SocialSignUp from './SocialSignUp';
 import Loading from '../../components/Shared/Loading';
+import { async } from '@firebase/util';
 
 function SignUp() {
 
     const { register, formState: { errors }, handleSubmit } = useForm()
+    console.log(register);
 
     const [
         signInWithEmailAndPassword,
@@ -18,23 +20,30 @@ function SignUp() {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail, sending, passResetError] = useSendPasswordResetEmail(auth)
+
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
-    if (error) {
-        toast.error(<p>Error: {error.message}</p>)
+    if (error, passResetError) {
+        toast.error(<p>Error: {error?.message}, {passResetError?.message}</p>)
     }
 
-    if (loading) {
-       return <div className='flex justify-center items-center h-screen'><Loading/></div>
+    if (loading, sending) {
+        <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const handleSignIn = data => {
+        console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
         navigate(from, { replace: true });
         toast.success('Congratulation ! You are successfuly SignIn')
     }
+
+    // const passReset = () => {
+    //     sendPasswordResetEmail(email);
+    // }
 
     return (
         <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center md:text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>
@@ -52,7 +61,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
                                 <input type="email"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
+                                    className="bg-transparent md:w-[450px]  border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -81,7 +90,7 @@ function SignUp() {
 
                             <div className='flex justify-center'>
                                 <input type="password"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none  px-2"
+                                    className="bg-transparent md:w-[450px] border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("password", {
                                         required: {
                                             value: true,
@@ -101,15 +110,15 @@ function SignUp() {
                         </label>
                     </div>
 
-                    <div className='flex justify-end w-[300px] md:w-[580px]'>
-                        <p className='lg:pl-4 text-center'>Forget Password</p>
+                    <div className='flex justify-end w-[300px] md:w-[650px]'>
+                        <button /*onClick={passReset}*/ className='lg:pl-4 text-center cursor-pointer'>Forget Password</button>
                     </div>
-
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">
                         <button className='type-4 btn-selection'> Sign In</button>
                     </div>
                 </form>
+
 
                 <div className='flex justify-center my-7 md:my-14'>
                     <p className='lg:pr-3 text-'> New here ? <Link to='/register' className='link-selection type-3'>Register</Link> </p>
