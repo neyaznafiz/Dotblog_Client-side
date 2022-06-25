@@ -42,8 +42,8 @@ function AddBlog() {
                     </div>
                 </div>
 
-                <div className="flex justify-end mx-4 mb-5 md:my-5 mb-lg-4">
-                    <button className='text-2xl type-4 btn-selection'> Publish</button>
+                <div className="flex justify-end mb-5 md:my-5 mb-lg-4">
+                    <button className='text-2xl hover:text-gray-600'> Publish</button>
                 </div>
 
             </form>

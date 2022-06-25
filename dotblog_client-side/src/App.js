@@ -9,9 +9,9 @@ import SignIn from './pages/UserAuthentication/SignIn'
 import AddBlog from "./pages/Blog/AddBlog";
 import SignUp from "./pages/UserAuthentication/SignUp";
 import useLoading from "./Hooks/useLoading";
-import { HashLoader } from "react-spinners";
 import Loading from "./components/Shared/Loading";
 import PassReset from "./pages/UserAuthentication/PassReset";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 
 function App() {
@@ -32,7 +32,12 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/allblog" element={<AllBlogs />} />
-              <Route path="/addblog" element={<AddBlog />} />
+
+              {/* private route */}
+              <Route element={<PrivateRoute></PrivateRoute>}>
+                <Route path="/addblog" element={<AddBlog />} />
+              </Route>
+
               <Route path="/about" element={<About />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signin/forgetpassword" element={<PassReset />} />
