@@ -27,7 +27,7 @@ function SignUp() {
     let from = location.state?.from?.pathname || "/"
 
     if ( emailVerificationError) {
-        return toast.error(<p>Error: {emailVerificationError?.message}</p>)
+        return alert(<p>Error: {emailVerificationError?.message}</p>)
     }
 
     if (loading || sending) {

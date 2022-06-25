@@ -11,13 +11,13 @@ function PassReset() {
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth)
 
     if (sending) {
-        <div className='flex justify-center items-center h-screen'><Loading /></div>
+      return <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const passReset = (event) => {
         event.preventDefault()
         if (error) {
-            toast.error(<p>Error: {error?.message}</p>)
+            alert(<p>Error: {error?.message}</p>)
         }
         else {
             sendPasswordResetEmail(event.target.email.value)
@@ -33,7 +33,7 @@ function PassReset() {
 
                 <div className='my-14'>
                     <p className="text-2xl md:text-3xl font-bold my-7">Reset your pssword</p>
-                    <p>Please input your valid email here. <br /> We send an email to reset your password.</p>
+                    <p>Please input your valid email here. <br /> We will send an email to reset your password.</p>
                 </div>
 
                 <form onSubmit={passReset}>
