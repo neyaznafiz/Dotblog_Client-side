@@ -26,8 +26,8 @@ function SignUp() {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
-    if (error, emailVerificationError) {
-        return toast.error(<p>Error: {error?.message}, {emailVerificationError?.message}</p>)
+    if ( emailVerificationError) {
+        return toast.error(<p>Error: {emailVerificationError?.message}</p>)
     }
 
     if (loading, sending) {
@@ -35,11 +35,15 @@ function SignUp() {
     }
 
     const handleSignUp = async data => {
-        await createUserWithEmailAndPassword( data.email, data.password)
+        if(error){
+             toast.error(<p>Error: {error?.message}</p>)
+        }
+       else{ await createUserWithEmailAndPassword( data.email, data.password)
         navigate(from, { replace: true });
         await sendEmailVerification()
         toast.success('Verification email send to {data.email}')
         toast.success('Congratulation ! Your registration was successful')
+       }
     }
 
 
@@ -59,7 +63,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Name</label>
                             <div className='flex justify-center'>
                                 <input type="text"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
+                                    className="bg-transparent md:w-[450px] border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("name", {
                                         required: {
                                             value: true,
@@ -84,7 +88,7 @@ function SignUp() {
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
                                 <input type="email"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
+                                    className="bg-transparent md:w-[450px] border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -113,7 +117,7 @@ function SignUp() {
 
                             <div className='flex justify-center'>
                                 <input type="password"
-                                    className="bg-transparent border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
+                                    className="bg-transparent md:w-[450px] border-b-[2.5px] border-dashed border-black rounded-none outline-none px-2"
                                     {...register("password", {
                                         required: {
                                             value: true,

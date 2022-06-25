@@ -23,19 +23,21 @@ function SignUp() {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
-    if (error) {
-        toast.error(<p>Error: {error?.message}</p>)
-    }
 
     if (loading) {
         <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const handleSignIn = data => {
-        console.log(data);
-        signInWithEmailAndPassword(data.email, data.password)
-        navigate(from, { replace: true });
-        toast.success('Congratulation ! You are successfuly SignIn')
+        if (error) {
+            toast.error(<p>Error: {error?.message}</p>)
+        }
+        else {
+            console.log(data);
+            signInWithEmailAndPassword(data.email, data.password)
+            navigate(from, { replace: true });
+            toast.success('Congratulation ! You are successfuly SignIn')
+        }
     }
 
 
@@ -44,7 +46,7 @@ function SignUp() {
 
             <div className='w-[300px] md:w-[700px]'>
 
-            <p className="text-3xl font-bold my-10 md:pl-24">Sign In Here</p>
+                <p className="text-3xl font-bold my-10 md:pl-24">Sign In Here</p>
 
                 <form onSubmit={handleSubmit(handleSignIn)}>
 
@@ -105,7 +107,7 @@ function SignUp() {
                     </div>
 
                     <div className='flex justify-end w-[300px] md:w-[650px]'>
-                        <Link to='/signin/forgetpassword' className='lg:pl-4 text-center cursor-pointer'>Forget Password</Link>
+                        <Link to='/signin/forgetpassword' className='lg:pl-4 text-center cursor-pointer link-selection type-3'>Forget Password</Link>
                     </div>
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">

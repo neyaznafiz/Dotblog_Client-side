@@ -10,17 +10,17 @@ function PassReset() {
 
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth)
 
-    if (error) {
-        toast.error(<p>Error: {error?.message}</p>)
-    }
-
     if (sending) {
         <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const passReset = (event) => {
         event.preventDefault()
-        if (sendPasswordResetEmail(event.target.email.value)) {
+        if (error) {
+            toast.error(<p>Error: {error?.message}</p>)
+        }
+        else {
+            sendPasswordResetEmail(event.target.email.value)
             toast.success('Password reset email was send.')
         }
 
