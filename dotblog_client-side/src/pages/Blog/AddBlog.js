@@ -1,12 +1,35 @@
 import React from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
+import auth from '../../Firebase/firebase.init'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 function AddBlog() {
 
-    const { register, formState: { errors }, handleSubmit } = useForm()
+    const { register, formState: { errors }, handleSubmit, reset } = useForm()
 
-    const handlePostBlog = () => {
+    const [user] = useAuthState(auth)
 
+    const handlePostBlog = data => {
+
+        const blogInput = {
+            email: user.email,
+            title: data.title,
+            content: data.content
+        }
+
+        axios.post('http://localhost:5000/post-blog', blogInput)
+            .then(res => {
+                const { data } = res
+                if (data?.insertedId) {
+                    toast.success('Your blog publish successfully')
+                    reset()
+                }
+                else {
+                    toast.error('Faild to publish your blog. Please try again.')
+                }
+            })
     }
 
     return (
