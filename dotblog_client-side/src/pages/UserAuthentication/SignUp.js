@@ -30,8 +30,8 @@ function SignUp() {
         return toast.error(<p>Error: {emailVerificationError?.message}</p>)
     }
 
-    if (loading, sending) {
-        <div className='flex justify-center items-center h-screen'><Loading /></div>
+    if (loading || sending) {
+       return <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
     const handleSignUp = async data => {

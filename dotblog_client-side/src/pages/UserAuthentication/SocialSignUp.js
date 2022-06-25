@@ -7,6 +7,7 @@ import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import Loading from '../../components/Shared/Loading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
 
 function SocialSignUp() {
 
@@ -18,14 +19,20 @@ function SocialSignUp() {
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
-    // navigate(from, { replace: true });
 
-    if (googleError, facebookError, githubError, twitterError) {
+
+    if (googleError || facebookError || githubError || twitterError) {
         toast.error(<>{googleError?.message}, {facebookError?.message}, {githubError?.message}, {twitterError?.message}</>)
     }
 
-    if (googleLoading, facebookLoading, githubLoading, twitterLoading) {
-        return <Loading />
+    if (googleLoading || facebookLoading || githubLoading || twitterLoading) {
+        return <div className='flex justify-center items-center'>
+            <HashLoader color='#05a962' size={150} />
+        </div>
+    }
+
+    if (googleUser || facebookUser || githubUser || twitterUser) {
+        navigate(from, { replace: true })
     }
 
 
