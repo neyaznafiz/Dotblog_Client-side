@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -6,12 +5,11 @@ import auth from '../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 import SocialSignUp from './SocialSignUp';
 import Loading from '../../components/Shared/Loading';
-import { async } from '@firebase/util';
 
 function SignUp() {
 
     const { register, formState: { errors }, handleSubmit } = useForm()
-    console.log(register);
+    console.log(register)
 
     const [
         signInWithEmailAndPassword,
@@ -20,17 +18,16 @@ function SignUp() {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending, passResetError] = useSendPasswordResetEmail(auth)
 
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
 
-    if (error, passResetError) {
-        toast.error(<p>Error: {error?.message}, {passResetError?.message}</p>)
+    if (error) {
+        toast.error(<p>Error: {error?.message}</p>)
     }
 
-    if (loading, sending) {
+    if (loading) {
         <div className='flex justify-center items-center h-screen'><Loading /></div>
     }
 
@@ -41,22 +38,19 @@ function SignUp() {
         toast.success('Congratulation ! You are successfuly SignIn')
     }
 
-    // const passReset = () => {
-    //     sendPasswordResetEmail(email);
-    // }
 
     return (
         <div className='montserrat-alternates font-semibold h-screen grid justify-center items-center md:text-xl text-black bg-image' style={{ backgroundImage: "url('https://i.ibb.co/GHtvgpt/logbg-1.jpg')", backgroundSize: 'cover' }}>
 
             <div className='w-[300px] md:w-[700px]'>
 
-                <p className="text-3xl font-bold my-10 md:pl-24">Sign In Here</p>
+            <p className="text-3xl font-bold my-10 md:pl-24">Sign In Here</p>
 
                 <form onSubmit={handleSubmit(handleSignIn)}>
 
-                    {/* email */}
-                    <div className="form-control w-full bg-transparent border-0">
 
+                    <div className="form-control w-full bg-transparent border-0">
+                        {/* email */}
                         <div className='w-full md:flex justify-center mb-4'>
                             <label className="grid items-end bg-inherit md:w-[150px]" >Your Email</label>
                             <div className='flex justify-center'>
@@ -111,7 +105,7 @@ function SignUp() {
                     </div>
 
                     <div className='flex justify-end w-[300px] md:w-[650px]'>
-                        <button /*onClick={passReset}*/ className='lg:pl-4 text-center cursor-pointer'>Forget Password</button>
+                        <Link to='/signin/forgetpassword' className='lg:pl-4 text-center cursor-pointer'>Forget Password</Link>
                     </div>
 
                     <div className="flex justify-center mx-4 my-5 mb-lg-4">

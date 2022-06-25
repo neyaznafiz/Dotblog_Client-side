@@ -68,7 +68,7 @@ const Navbar = ({ children }) => {
 
                             <Link to='/' className='type-1 menu-selection'>Home</Link>
                             <Link to='/allblog' className='type-1 menu-selection'>All Blogs</Link>
-                            <Link to='/addblog' className='type-1 menu-selection'>Add Blogs</Link>
+                            <Link to='/addblog' className='type-1 menu-selection'>Create Blog</Link>
                             {/* <Link to='/about'>About</Link> */}
 
                             {!user ?
@@ -97,7 +97,7 @@ const Navbar = ({ children }) => {
 
                     <Link to='/allblog' className='type-2 mobile-nav-menu-selection flex justify-center'>All Blogs</Link>
 
-                    <Link to='/addblog' className='type-2 mobile-nav-menu-selection flex justify-center'>Add Blogs</Link>
+                    <Link to='/addblog' className='type-2 mobile-nav-menu-selection flex justify-center'>Create Blog</Link>
 
                     {/* <Link to='/about'>About</Link> */}
                     {!user ?

@@ -11,6 +11,7 @@ import SignUp from "./pages/UserAuthentication/SignUp";
 import useLoading from "./Hooks/useLoading";
 import { HashLoader } from "react-spinners";
 import Loading from "./components/Shared/Loading";
+import PassReset from "./pages/UserAuthentication/PassReset";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/addblog" element={<AddBlog />} />
               <Route path="/about" element={<About />} />
               <Route path="/signin" element={<SignIn />} />
+              <Route path="/signin/forgetpassword" element={<PassReset />} />
               <Route path="/register" element={<SignUp />} />
             </Routes>
 
