@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineHeart } from 'react-icons/ai';
+import { BiMessageRounded } from 'react-icons/bi';
 import auth from '../../../Firebase/firebase.init';
 
 const DisplayAllBlogs = ({ blog }) => {
@@ -18,8 +19,9 @@ const DisplayAllBlogs = ({ blog }) => {
                 <h1 className='text-xl md:text-4xl font-semibold hover:text-[#05a962]'>{title}</h1>
                 </div>
 
-                <div className='pl-7 py-2'>
-                    <p><AiOutlineHeart className='text-2xl'/></p>
+                <div className='pl-7 py-2 mt-8 flex gap-x-5'>
+                    <p><AiOutlineHeart className='text-2xl hover:text-red-600'/></p>
+                    <p className='flex gap-x-2 text-md hover:text-gray-400'><BiMessageRounded className='text-2xl'/> <span className='font-semibold'>Add Comment</span></p>
                 </div>
             </div>
 
