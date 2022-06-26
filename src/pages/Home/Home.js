@@ -8,7 +8,7 @@ function Home() {
            
            <div className=''>
            <Banner />
-           <AllBlogs></AllBlogs>
+           {/* <AllBlogs></AllBlogs> */}
            </div>
 
         </div>
