@@ -33,7 +33,7 @@ function AddBlog() {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex justify-center items-center h-screen font-sans'>
 
             <form onSubmit={handleSubmit(handlePostBlog)} className=' rounded-lg p-7 md:p-16'>
 

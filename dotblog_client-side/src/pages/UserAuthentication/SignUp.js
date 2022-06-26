@@ -52,7 +52,7 @@ function SignUp() {
 
             <div className='w-[300px] md:w-[700px]'>
 
-                <p className="text-3xl font-bold my-10 md:pl-24">Register Here</p>
+                <p className="text-3xl font-bold my-10 md:pl-10">Register Here</p>
 
                 <form onSubmit={handleSubmit(handleSignUp)}>
 
