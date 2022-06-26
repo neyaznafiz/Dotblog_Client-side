@@ -21,7 +21,7 @@ function AddBlog() {
             content: data.content
         }
 
-        axios.post('http://localhost:5000/post-blog', blogInput)
+        axios.post('https://mighty-dawn-99757.herokuapp.com/post-blog', blogInput)
             .then(res => {
                 const { data } = res
                 if (data?.insertedId) {

@@ -9,7 +9,7 @@ function AllBlogs() {
 
     useEffect(() => {
 
-        axios.get('http://localhost:5000/blogs')
+        axios.get('https://mighty-dawn-99757.herokuapp.com/blogs')
             .then(res => {
                 const { data } = res
                 setAllBlogs(data);

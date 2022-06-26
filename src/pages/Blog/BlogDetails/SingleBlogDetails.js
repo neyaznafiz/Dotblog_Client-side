@@ -16,7 +16,7 @@ function SingleBlogDetails() {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:5000/blog/${ID}`)
+        axios.get(`https://mighty-dawn-99757.herokuapp.com/blog/${ID}`)
             .then(res => {
                 const { data } = res
                 setFullBlog(data)
