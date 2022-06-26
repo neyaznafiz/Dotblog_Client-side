@@ -10,11 +10,13 @@ function AddBlog() {
     const { register, formState: { errors }, handleSubmit, reset } = useForm()
 
     const [user] = useAuthState(auth)
+    console.log(user);
 
     const handlePostBlog = data => {
 
         const blogInput = {
             email: user.email,
+            name: user.displayName,
             title: data.title,
             content: data.content
         }

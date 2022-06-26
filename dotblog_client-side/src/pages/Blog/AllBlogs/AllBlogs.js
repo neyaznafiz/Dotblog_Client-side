@@ -20,12 +20,15 @@ function AllBlogs() {
 
     return (
         <div>
-            {
+            
+          <div className='grid justify-center gap-y-4 py-16 px-6 md:px-0'>
+          {
                 allBlogs.map(blog => <DisplayAllBlogs
                     key={blog._id}
                     blog={blog}
                 />)
             }
+          </div>
         </div>
     )
 }

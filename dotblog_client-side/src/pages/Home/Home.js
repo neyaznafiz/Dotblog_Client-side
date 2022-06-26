@@ -1,4 +1,5 @@
 import React from 'react'
+import AllBlogs from '../Blog/AllBlogs/AllBlogs'
 import Banner from './Banner'
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
            
            <div className=''>
            <Banner />
+           <AllBlogs></AllBlogs>
            </div>
 
         </div>
