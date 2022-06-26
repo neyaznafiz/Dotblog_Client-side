@@ -26,7 +26,7 @@ const Navbar = ({ children }) => {
                         <div>
                             <img src="https://i.ibb.co/ZB7bvJ9/nav-logo.png" alt="" className='w-[37px]' />
                         </div>
-                        <div className="flex-1 px-2 mx-2 text-2xl tracking-widest font-semibold montserrat-alternates">dotblog</div>
+                        <div className="flex-1 px-2 mx-2 text-2xl tracking-widest font-semibold montserrat-alternates">Dotblog</div>
                     </Link>
 
                     <div className="flex-none lg:hidden">

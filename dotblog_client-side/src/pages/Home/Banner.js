@@ -1,6 +1,21 @@
-import React from 'react'
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
 
 function Banner() {
+
+    // const [newsImg, setNewsImg] = useState({})
+    // console.log(newsImg);
+
+    // useEffect(() => {
+
+    //     axios.get('https://newsapi.org/v2/everything?q=tesla&from=2022-05-26&sortBy=publishedAt&apiKey=7f4220f912f548ebb30ccc79b191ab0e')
+    //         .then(res => {
+    //             const { data } = res
+    //             setNewsImg(data)
+    //         })
+
+    // }, [])
+
     return (
         <div className='md:mx-24'>
 

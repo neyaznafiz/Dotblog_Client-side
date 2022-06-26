@@ -12,6 +12,8 @@ import useLoading from "./Hooks/useLoading";
 import Loading from "./components/Shared/Loading";
 import PassReset from "./pages/UserAuthentication/PassReset";
 import PrivateRoute from "./Routes/PrivateRoute";
+import Footer from "./components/Shared/Footer";
+import SingleBlogDetails from "./pages/Blog/BlogDetails/SingleBlogDetails";
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/allblog" element={<AllBlogs />} />
+              <Route path="/allblog/:ID" element={<SingleBlogDetails />} />
 
               {/* private route */}
               <Route element={<PrivateRoute></PrivateRoute>}>
@@ -43,6 +46,8 @@ function App() {
               <Route path="/signin/forgetpassword" element={<PassReset />} />
               <Route path="/register" element={<SignUp />} />
             </Routes>
+
+            <Footer></Footer>
 
           </Navbar>
           <ToastContainer />

@@ -5,7 +5,7 @@ import DisplayAllBlogs from './DisplayAllBlogs';
 function AllBlogs() {
 
     const [allBlogs, setAllBlogs] = useState([])
-    console.log(allBlogs);
+    // console.log(allBlogs);
 
     useEffect(() => {
 
