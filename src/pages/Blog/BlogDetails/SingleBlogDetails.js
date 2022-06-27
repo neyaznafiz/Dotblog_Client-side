@@ -24,7 +24,7 @@ function SingleBlogDetails() {
     }, [ID])
 
     return (
-        <div className='montserrat-alternates h-screen flex justify-center '>
+        <div className='montserrat-alternates flex justify-center '>
 
             <div className='m-5 w-[1250px] p-5 lg:p-16 md:p-16'>
                 <div className='mb-10'>
@@ -45,8 +45,8 @@ function SingleBlogDetails() {
 
                     <div className='flex md:flex-col items-center gap-7 py-9 lg:py-28'>
                         <AiOutlineHeart className='text-3xl hover:text-red-600 hover:scale-125' />
-                        <BsBookmark className='text-2xl hover:scale-125 hover:text-gray-600' />
-                        <RiShareForwardLine className='text-3xl hover:scale-125 hover:text-gray-600' />
+                        <BsBookmark className='text-2xl hover:scale-125' />
+                        <RiShareForwardLine className='text-3xl hover:scale-125' />
 
                     </div>
                 </div>

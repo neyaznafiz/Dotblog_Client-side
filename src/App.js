@@ -48,7 +48,9 @@ function App() {
               <Route path="/register" element={<SignUp />} />
             </Routes>
 
+            <div>
             <Footer></Footer>
+            </div>
 
           </Navbar>
           <ToastContainer />

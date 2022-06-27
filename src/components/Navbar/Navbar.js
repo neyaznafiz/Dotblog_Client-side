@@ -20,7 +20,7 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
-                <div className="w-full navbar bg-transparent md:px-20 flex justify-between ">
+                <div className="w-full navbar bg-transparent md:px-20 flex justify-between fixed-top">
 
                     <Link to='/'>
                         <div>
@@ -82,7 +82,9 @@ const Navbar = ({ children }) => {
                 </div>
 
                 {/* <!-- Page content here --> */}
-                {children}
+               <div className='mt-[64px] lg:mt-[80px] md:mt-[80px]'>
+               {children}
+               </div>
 
 
             </div>
