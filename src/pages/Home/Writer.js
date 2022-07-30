@@ -23,7 +23,7 @@ function Writer() {
 
                     <div className='lg:-mt-[64px]'>
                         <h1 class="lg:text-5xl text-3xl py-2 font-bold">Neyaz Mobalik Nafiz</h1>
-                        <p class="py-6 px-10 lg:text-lg">I am a MERN Stact Web Developer with a interest of writing and a love for React. <br /> I am a student of Computer Science and Technology. I Love to write about technology. <br /> I hope it will be helpful for people. </p>
+                        <p class="py-6 px-5 lg:text-lg">I am a MERN Stact Web Developer with a interest of writing and a love for React. <br /> I am a student of Computer Science and Technology. I Love to write about technology. <br /> I hope it will be helpful for people. </p>
 
                         <div className='lg:flex lg:justify-end justify-center lg:-mr-24 lg:mt-24 lg:text-xl text-lg font-bold'>
                             <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2'>

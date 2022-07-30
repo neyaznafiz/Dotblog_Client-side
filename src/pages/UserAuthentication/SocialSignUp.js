@@ -7,7 +7,6 @@ import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import Loading from '../../components/Shared/Loading';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { HashLoader } from 'react-spinners';
 
 function SocialSignUp() {
 
@@ -27,7 +26,7 @@ function SocialSignUp() {
 
     if (googleLoading || facebookLoading || githubLoading || twitterLoading) {
         return <div className='flex justify-center items-center'>
-            <HashLoader color='#05a962' size={150} />
+            <Loading></Loading>
         </div>
     }
 

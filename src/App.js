@@ -9,12 +9,12 @@ import SignIn from './pages/UserAuthentication/SignIn'
 import AddBlog from "./pages/Blog/AddBlog";
 import SignUp from "./pages/UserAuthentication/SignUp";
 import useLoading from "./Hooks/useLoading";
-import Loading from "./components/Shared/Loading";
 import PassReset from "./pages/UserAuthentication/PassReset";
 import PrivateRoute from "./Routes/PrivateRoute";
 import Footer from "./components/Shared/Footer";
 import SingleBlogDetails from "./pages/Blog/BlogDetails/SingleBlogDetails";
 import BackToTop from "./components/Shared/BackToTop";
+import { HashLoader } from "react-spinners";
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
 
       {loading ?
         <div className="w-screen h-screen grid justify-center items-center bg-white">
-          <Loading ></Loading>
+         <HashLoader color='#05a962' size={250} />
         </div>
         :
         <>

@@ -8,7 +8,7 @@ const BackToTop = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      return window.scrollY > 50 ? setShow(true) : setShow(false);
+      return window.scrollY > 400 ? setShow(true) : setShow(false);
     });
   });
   const scrollToTop = () => {

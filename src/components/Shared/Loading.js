@@ -3,7 +3,7 @@ import { HashLoader } from 'react-spinners'
 
 function Loading() {
     return (
-        <HashLoader color='#05a962' size={250} />
+        <HashLoader color='#05a962' size={150} />
     )
 }
 
