@@ -14,6 +14,7 @@ import PassReset from "./pages/UserAuthentication/PassReset";
 import PrivateRoute from "./Routes/PrivateRoute";
 import Footer from "./components/Shared/Footer";
 import SingleBlogDetails from "./pages/Blog/BlogDetails/SingleBlogDetails";
+import BackToTop from "./components/Shared/BackToTop";
 
 
 function App() {
@@ -48,9 +49,11 @@ function App() {
               <Route path="/register" element={<SignUp />} />
             </Routes>
 
+            <BackToTop></BackToTop>
             <div>
             <Footer></Footer>
             </div>
+
 
           </Navbar>
           <ToastContainer />
