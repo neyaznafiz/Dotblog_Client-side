@@ -35,7 +35,7 @@ function AddBlog() {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen font-sans'>
+        <div className='flex justify-center items-center h-screen font-sans lg:mt-14'>
 
             <form onSubmit={handleSubmit(handlePostBlog)} className=' rounded-lg p-7 md:p-16'>
 
@@ -68,7 +68,7 @@ function AddBlog() {
                 </div>
 
                 <div className="flex justify-end mb-5 md:my-5 mb-lg-4">
-                    <button className='text-2xl hover:text-gray-600'> Publish</button>
+                    <button className='text-2xl hover:text-gray-500'> Publish</button>
                 </div>
 
             </form>

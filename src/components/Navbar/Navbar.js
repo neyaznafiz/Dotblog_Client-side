@@ -75,7 +75,7 @@ const Navbar = ({ children }) => {
 
                                                     {user?.photoURL === null && (
                                                         <span className="">
-                                                            <AiOutlineUser className="border-2 border-black text-black bg-white bg-opacity-50 text-3xl rounded-full -mb-2" />
+                                                            <AiOutlineUser className={`border-2 ${dark ? "border-black" : "border-white"} ${dark ? "text-black" : "text-white"} text-3xl rounded-full -mb-2`} />
                                                         </span>
                                                     )}
                                                 </div>
@@ -113,7 +113,7 @@ const Navbar = ({ children }) => {
                                                     </div>
                                                 </ul>
                                             </div>
-                                        </> 
+                                        </>
                                     }
                                 </div>
 
@@ -169,7 +169,7 @@ const Navbar = ({ children }) => {
 
                                                 {user?.photoURL === null && (
                                                     <span className="">
-                                                        <AiOutlineUser className={`border-2 ${dark? "border-black" : "border-white" } ${dark? "text-black" : "text-white" } text-4xl rounded-full`} />
+                                                        <AiOutlineUser className={`border-2 ${dark ? "border-black" : "border-white"} ${dark ? "text-black" : "text-white"} text-4xl rounded-full`} />
                                                     </span>
                                                 )}
                                             </div>
