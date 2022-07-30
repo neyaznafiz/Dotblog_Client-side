@@ -20,12 +20,12 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
-                <div className="w-full navbar bg-base-100 md:px-20 fixed-top grid justify-center ">
+                <div className="w-full navbar bg-base-100  md:px-20 fixed-top grid justify-center ">
 
                     <div className='flex justify-center lg:h-16'>
                         <Link to='/' className='flex items-center'>
                             <div>
-                                <img src="https://i.ibb.co/ZB7bvJ9/nav-logo.png" alt="" className='w-[37px]' />
+                                <img src="https://i.ibb.co/ZB7bvJ9/nav-logo.png" alt="" className='w-[40px] -mt-2' />
                             </div>
                             <div className="flex-1 px-2 mx-2 pt-1 text-4xl tracking-widest font-semibold great-vibes">Dotblog</div>
                         </Link>

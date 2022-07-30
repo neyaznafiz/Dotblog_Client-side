@@ -24,7 +24,7 @@ function App() {
     <div className="">
 
       {loading ?
-        <div className="w-screen h-screen grid justify-center items-center">
+        <div className="w-screen h-screen grid justify-center items-center bg-white">
           <Loading ></Loading>
         </div>
         :
