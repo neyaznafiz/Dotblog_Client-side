@@ -2,6 +2,7 @@ import React from 'react'
 
 
 import Banner from './Banner'
+import Writer from './Writer'
 
 function Home() {
 
@@ -12,6 +13,7 @@ function Home() {
            
            <div className=''>
            <Banner />
+           <Writer/>
            </div>
 
         </div>
