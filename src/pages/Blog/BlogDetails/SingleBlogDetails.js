@@ -24,7 +24,7 @@ function SingleBlogDetails() {
     }, [ID])
 
     return (
-        <div className='montserrat-alternates flex justify-center '>
+        <div className='montserrat-alternates flex justify-center lg:mt-14 mt-12'>
 
             <div className='m-5 w-[1250px] p-5 lg:p-16 md:p-16'>
                 <div className='mb-10'>

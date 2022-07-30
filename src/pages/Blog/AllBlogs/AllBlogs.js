@@ -19,7 +19,7 @@ function AllBlogs() {
 
 
     return (
-        <div>
+        <div className='lg:mt-14 mt-12'>
             
           <div className='grid justify-center gap-y-4 py-16 px-6 md:px-0'>
           {

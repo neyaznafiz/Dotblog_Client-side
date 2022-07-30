@@ -17,15 +17,15 @@ function Banner() {
     // }, [])
 
     return (
-        <div className='md:mx-24'>
+        <div className=''>
 
             {/* <!-- Background image --> */}
-            <div className=" p-3 md:p-5 md:mx-16 h-[170px] md:h-[700px] text-center bg-image"
-                style={{ backgroundImage: "url('https://i.ibb.co/R7yxJ1f/newspaper-bg.jpg')", backgroundSize: 'cover' }} >
+            <div className=" p-3 h-[170px] md:h-[700px] text-center bg-image"
+                style={{ backgroundImage: "url('https://i.ibb.co/ZSfGvf6/home-bg.jpg')", backgroundSize: 'cover' }} >
 
-                <div className="mask h-full" style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
+                <div className="mask h-full" >
                     <div className="flex justify-center items-center h-full">
-                        <div className="text-white p-5">
+                        <div className="text-black p-5">
                             {/* <h1 className="mb-3">Heading</h1> */}
                             <h4 className="mb-3 raleway text-md md:text-5xl font ">“Two things are infinity: the universe and the human stupidity. <br /> And I'm not sure about the universe.”</h4>
                             <div className='flex justify-between md:justify-around '>

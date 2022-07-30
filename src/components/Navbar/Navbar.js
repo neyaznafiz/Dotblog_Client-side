@@ -16,13 +16,13 @@ const Navbar = ({ children }) => {
     };
 
     return (
-        <div className="drawer drawer-end" data-theme={dark ? "black" : "wireframe"}>
+        <div className="drawer drawer-end" data-theme={dark ? "wireframe" : "black"}>
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
-                <div className="w-full navbar bg-base-100 md:px-20 fixed-top grid justify-center lg:h-40">
+                <div className="w-full navbar bg-base-100 md:px-20 fixed-top grid justify-center ">
 
-                    <div className='flex justify-center'>
+                    <div className='flex justify-center lg:h-16'>
                         <Link to='/' className='flex items-center'>
                             <div>
                                 <img src="https://i.ibb.co/ZB7bvJ9/nav-logo.png" alt="" className='w-[37px]' />
@@ -31,7 +31,7 @@ const Navbar = ({ children }) => {
                         </Link>
                     </div>
 
-                    <div className='border-b w-screen mt-4 lg:mt-0'></div>
+                    {/* <div className='border-b w-screen mt-4 lg:mt-0'></div> */}
 
                     <div className="flex-none lg:hidden">
 
@@ -56,8 +56,8 @@ const Navbar = ({ children }) => {
 
                     </div>
 
-                    <div className="flex-none hidden lg:block">
-                        <ul className="menu menu-horizontal gap-6 montserrat-alternates font-semibold tracking-wide justify-center flex">
+                    <div className="flex-none hidden lg:block mt-2">
+                        <ul className="menu menu-horizontal gap-6 montserrat-alternates font-semibold tracking-wide justify-center flex ">
 
                             {/* <!-- Navbar menu content here --> */}
                             <label className="swap swap-rotate">
