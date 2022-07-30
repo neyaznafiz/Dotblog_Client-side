@@ -68,7 +68,7 @@ const Navbar = ({ children }) => {
                                                     {user?.photoURL && (
                                                         <img
                                                             src={user?.photoURL}
-                                                            className="w-10 h-10 rounded-full"
+                                                            className="w-9 h-9 mt-3 rounded-full"
                                                             alt=""
                                                         />
                                                     )}
@@ -83,18 +83,18 @@ const Navbar = ({ children }) => {
                                                 <ul tabIndex="0" className={`dropdown-content menu p-2 shadow w-72 bg-white rounded-sm ${show} text-black text-center mt-4`} >
                                                     <div className="grid gap-y-3 pt-7 pb-3">
                                                         <div className="bg-gray-200 grid justify-center p-4 rounded-sm">
-                                                            <div className="flex justify-center -mt-10">
+                                                            <div className="flex justify-center -mt-11">
                                                                 {user?.photoURL && (
                                                                     <img
                                                                         src={user?.photoURL}
-                                                                        className="w-10 h-10 rounded-full"
+                                                                        className="w-[56px] h-[56px] rounded-full"
                                                                         alt=""
                                                                     />
                                                                 )}
 
                                                                 {user?.photoURL === null && (
                                                                     <span className="">
-                                                                        <AiOutlineUser className={`text-black border-2 border-base-100 bg-white text-5xl rounded-full`} />
+                                                                        <AiOutlineUser className={`text-black border-2 border-black bg-white text-[56px] rounded-full`} />
                                                                     </span>
                                                                 )}
                                                             </div>
@@ -162,7 +162,7 @@ const Navbar = ({ children }) => {
                                                 {user?.photoURL && (
                                                     <img
                                                         src={user?.photoURL}
-                                                        className="w-10 h-10 rounded-full"
+                                                        className="w-10 h-10 -mt-1 rounded-full"
                                                         alt=""
                                                     />
                                                 )}
@@ -174,25 +174,25 @@ const Navbar = ({ children }) => {
                                                 )}
                                             </div>
 
-                                            <ul tabIndex="0" className={`dropdown-content menu p-2 shadow w-72 bg-white rounded-sm ${show} text-black text-center mt-4`} >
+                                            <ul tabIndex="0" className={`dropdown-content menu p-2 shadow  bg-white rounded-sm ${show} text-black text-center mt-4`} >
                                                 <div className="grid gap-y-3 pt-7 pb-3">
                                                     <div className="bg-gray-200 grid justify-center p-4 rounded-sm">
-                                                        <div className="flex justify-center -mt-10">
+                                                        <div className="flex justify-center -mt-11">
                                                             {user?.photoURL && (
                                                                 <img
                                                                     src={user?.photoURL}
-                                                                    className="w-10 h-10 rounded-full"
+                                                                    className="w-[56px] h-[56px] rounded-full"
                                                                     alt=""
                                                                 />
                                                             )}
 
                                                             {user?.photoURL === null && (
                                                                 <span className="">
-                                                                    <AiOutlineUser className={`text-black border-2 border-base-100 bg-white text-5xl rounded-full`} />
+                                                                    <AiOutlineUser className={`text-black border-2 border-black bg-white text-[56px] rounded-full`} />
                                                                 </span>
                                                             )}
                                                         </div>
-                                                        <div>
+                                                        <div className=''>
                                                             <p className="pt-3 ">{user?.email}</p>
                                                         </div>
                                                     </div>
